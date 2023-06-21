@@ -32,13 +32,14 @@ def get_license_plate_number_suffix_stats(
         print(f'Working on {plate_number}')
         manufacturer = convert_manufacturer_to_hebrew(row['tozeret_nm'])
         year = row['shnat_yitzur']
+
         if int(plate_number) < FIRST_EIGHT_DIGITS_PLATE_NUMBER:
             suffix_years[str(plate_number)[-2:]][year][manufacturer] += 1
 
     return suffix_years
 
 
-def main(input_file_path: str, output_file_path: str):
+def main(input_file_path: str, output_file_path: str) -> None:
     license_plates_data = pandas.read_csv(
         input_file_path,
         delimiter='|',
