@@ -3,11 +3,16 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Local files
+license_plates_db.csv
+
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+.DS_Store
+.idea
 build/
 develop-eggs/
 dist/
